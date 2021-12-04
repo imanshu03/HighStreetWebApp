@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
 const Header = () => {
@@ -11,8 +12,18 @@ const Header = () => {
           className="d-md-flex justify-content-end"
         >
           <Nav className="">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link
+              onClick={() => document.getElementById('home').scrollIntoView()}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              onClick={() =>
+                document.getElementById('masterplan').scrollIntoView()
+              }
+            >
+              Masterplan
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

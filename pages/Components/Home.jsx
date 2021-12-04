@@ -16,13 +16,15 @@ const Home = () => {
   }, [ref, observer]);
 
   return (
-    <Container className="h-100" fluid>
-      <Row
-        className="h-100 home-col-up"
-        ref={ref}
-        data-func="show"
-        data-classname="transition-up"
-      >
+    <Container
+      id="home"
+      className="h-100 home-col-up"
+      fluid
+      ref={ref}
+      data-func="show"
+      data-classname="transition-up"
+    >
+      <Row className="h-100">
         <Col
           xs={{ order: 'last', span: 12 }}
           sm={{ order: 'last', span: 12 }}

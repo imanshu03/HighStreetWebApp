@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
 import { ObserverStore } from '../utils/ObserverContext';
 import Home from './Components/Home.jsx';
 import Header from './Components/Header.jsx';
@@ -7,6 +8,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import MasterPlan from './Components/MasterPlan';
 
 export default function LandingPage() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <>
       <Head>
