@@ -21,6 +21,7 @@ const MasterPlan = () => {
       ref={ref}
       data-func="show"
       data-classname="transition-up"
+      id="masterplan"
     >
       <Row>
         <Col className="d-flex align-items-center justify-content-center">
