@@ -1,6 +1,6 @@
-import { createContext, useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { initializeObserver } from "./intersection-observer.js";
+import { createContext, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { initializeObserver } from './intersection-observer.js';
 
 export const ObserverContext = createContext(null);
 

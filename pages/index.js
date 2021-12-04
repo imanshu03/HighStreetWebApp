@@ -1,9 +1,9 @@
-import Head from "next/head";
-import { ObserverStore } from "../utils/ObserverContext";
-import Home from "./Components/Home";
-import Header from "./Components/Header";
-import { SSRProvider } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
+import Head from 'next/head';
+import { ObserverStore } from '../utils/ObserverContext';
+import Home from './Components/Home.jsx';
+import Header from './Components/Header.jsx';
+import { SSRProvider } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
 export default function LandingPage() {
   return (

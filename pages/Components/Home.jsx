@@ -1,8 +1,8 @@
-import { useContext, useEffect, useRef } from "react";
-import Image from "next/image";
-import { ObserverContext } from "../../utils/ObserverContext";
-import { Col, Container, Row } from "react-bootstrap";
-import Logo from "../../assets/images.png";
+import { useContext, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import { ObserverContext } from '../../utils/ObserverContext';
+import { Col, Container, Row } from 'react-bootstrap';
+import Logo from '../../assets/images.png';
 
 const Home = () => {
   const observer = useContext(ObserverContext);
@@ -24,9 +24,9 @@ const Home = () => {
         data-classname="transition-up"
       >
         <Col
-          xs={{ order: "last", span: 12 }}
-          sm={{ order: "last", span: 12 }}
-          md={{ order: "first", span: 8 }}
+          xs={{ order: 'last', span: 12 }}
+          sm={{ order: 'last', span: 12 }}
+          md={{ order: 'first', span: 8 }}
           className="d-flex align-items-center justify-content-center"
         >
           <p className="lh-lg description">
@@ -40,9 +40,9 @@ const Home = () => {
           </p>
         </Col>
         <Col
-          xs={{ order: "first", span: 12 }}
-          sm={{ order: "first", span: 12 }}
-          md={{ order: "first", span: 4 }}
+          xs={{ order: 'first', span: 12 }}
+          sm={{ order: 'first', span: 12 }}
+          md={{ order: 'first', span: 4 }}
           className="d-flex align-items-center justify-content-center"
         >
           <Image src={Logo} alt="high street logo" />
