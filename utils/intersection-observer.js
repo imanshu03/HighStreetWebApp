@@ -1,26 +1,7 @@
 const properties = {
-  desktop: {
-    root: null,
-    threshold: 0.8,
-    rootMargin: "10px",
-  },
-  mobile: {
-    root: null,
-    threshold: 0.3,
-    rootMargin: "10px",
-  },
-};
-
-export const isMobileDevice = (userAgent) => {
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      userAgent
-    )
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+  root: null,
+  threshold: 0.5,
+  rootMargin: "10px",
 };
 
 export const callbacks = {
@@ -36,11 +17,7 @@ export const callbacks = {
   },
 };
 
-export const initializeObserver = (userAgent) => {
-  const options = isMobileDevice(userAgent)
-    ? properties.mobile
-    : properties.desktop;
-
+export const initializeObserver = () => {
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -49,7 +26,7 @@ export const initializeObserver = (userAgent) => {
         observer.unobserve(entry.target);
       }
     });
-  }, options);
+  }, properties);
 
   return observer;
 };

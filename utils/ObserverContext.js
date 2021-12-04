@@ -12,7 +12,7 @@ export const ObserverStore = (props) => {
   const [observer, setObserver] = useState(null);
 
   useEffect(() => {
-    const _obs = initializeObserver(navigator.userAgent);
+    const _obs = initializeObserver();
     setObserver(_obs);
   }, []);
 
