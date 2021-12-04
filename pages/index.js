@@ -1,19 +1,26 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.scss";
 import { ObserverStore } from "../utils/ObserverContext";
 import Home from "./Components/Home";
+import Header from "./Components/Header";
+import { SSRProvider } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default function LandingPage() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>High Street</title>
         <meta name="description" content="High Street" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ObserverStore>
-        <Home />
+        <SSRProvider>
+          <Header />
+          <Home />
+          <Home />
+        </SSRProvider>
       </ObserverStore>
-    </div>
+    </>
   );
 }

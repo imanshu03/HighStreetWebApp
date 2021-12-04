@@ -1,7 +1,7 @@
 const properties = {
   desktop: {
     root: null,
-    threshold: 0.6,
+    threshold: 0.8,
     rootMargin: "10px",
   },
   mobile: {
@@ -28,7 +28,7 @@ export const callbacks = {
     const { classname } = ref.dataset;
     ref.classList.toggle(classname, true);
   },
-  "show-timeout": function (ref) {
+  timeoutShow: function (ref) {
     const { classname, delay = 0 } = ref.dataset;
     setTimeout(() => {
       ref.classList.toggle(classname, true);
