@@ -1,6 +1,7 @@
 {
   "name": "high-street",
   "private": true,
+  "author": "Imanshu Rathore",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,11 +10,17 @@
   },
   "dependencies": {
     "next": "12.0.5",
+    "node-sass": "^6.0.1",
+    "prop-types": "^15.7.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "eslint": "8.4.0",
-    "eslint-config-next": "12.0.5"
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.4.0",
+    "eslint-config-next": "12.0.5",
+    "eslint-plugin-react": "^7.27.1",
+    "postcss": "^8.4.4",
+    "tailwindcss": "^2.2.19"
   }
 }
