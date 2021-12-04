@@ -1,46 +1,51 @@
 import { useContext, useEffect, useRef } from "react";
+import Image from "next/image";
 import { ObserverContext } from "../../utils/ObserverContext";
 import { Col, Container, Row } from "react-bootstrap";
+import Logo from "../../assets/images.png";
 
 const Home = () => {
   const observer = useContext(ObserverContext);
 
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
+  const ref = useRef(null);
 
   useEffect(() => {
-    if (ref1.current && observer) {
-      observer.observe(ref1.current);
+    if (ref.current && observer) {
+      observer.observe(ref.current);
     }
-    if (ref2.current && observer) {
-      observer.observe(ref2.current);
-    }
-  }, [ref1, ref2, observer]);
+  }, [ref, observer]);
 
   return (
     <Container className="h-100" fluid>
-      <Row className="h-100">
+      <Row
+        className="h-100 home-col-up"
+        ref={ref}
+        data-func="show"
+        data-classname="transition-up"
+      >
         <Col
           xs={{ order: "last", span: 12 }}
           sm={{ order: "last", span: 12 }}
-          md={{ order: "first", span: 7 }}
-          className="d-flex align-items-center justify-content-center home-col home-col-up"
-          ref={ref1}
-          data-func="show"
-          data-classname="transition-down"
+          md={{ order: "first", span: 8 }}
+          className="d-flex align-items-center justify-content-center"
         >
-          Text
+          <p className="lh-lg description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
         </Col>
         <Col
           xs={{ order: "first", span: 12 }}
           sm={{ order: "first", span: 12 }}
-          md={{ order: "first", span: 5 }}
-          className="d-flex align-items-center justify-content-center home-col home-col-down"
-          ref={ref2}
-          data-func="show"
-          data-classname="transition-up"
+          md={{ order: "first", span: 4 }}
+          className="d-flex align-items-center justify-content-center"
         >
-          Image
+          <Image src={Logo} alt="high street logo" />
         </Col>
       </Row>
     </Container>
