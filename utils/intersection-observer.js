@@ -1,7 +1,7 @@
 const properties = {
   root: null,
   threshold: 0.5,
-  rootMargin: "10px",
+  rootMargin: '10px',
 };
 
 export const callbacks = {
@@ -21,7 +21,7 @@ export const initializeObserver = () => {
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const { func = "show" } = entry.target.dataset;
+        const { func = 'show' } = entry.target.dataset;
         callbacks[func](entry.target);
         observer.unobserve(entry.target);
       }

@@ -4,6 +4,7 @@ import Home from './Components/Home.jsx';
 import Header from './Components/Header.jsx';
 import { SSRProvider } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import MasterPlan from './Components/MasterPlan';
 
 export default function LandingPage() {
   return (
@@ -18,7 +19,7 @@ export default function LandingPage() {
         <SSRProvider>
           <Header />
           <Home />
-          <Home />
+          <MasterPlan />
         </SSRProvider>
       </ObserverStore>
     </>
