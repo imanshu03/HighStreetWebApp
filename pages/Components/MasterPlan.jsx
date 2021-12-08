@@ -1,4 +1,4 @@
-import react, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { ObserverContext } from '../../utils/ObserverContext';
 import { Col, Container, Row } from 'react-bootstrap';
@@ -16,20 +16,20 @@ const MasterPlan = () => {
 
   return (
     <Container
-      className="h-100  home-col-up"
+      className="transition-wrapper py-5"
       fluid
       ref={ref}
       data-func="show"
       data-classname="transition-up"
       id="masterplan"
     >
-      <Row>
+      <Row className="py-3">
         <Col className="d-flex align-items-center justify-content-center">
-          <h2 className="lh-lg masterPlan__heading">Master Plan</h2>
+          <h1 className="display-4 text-center">Master Plan</h1>
         </Col>
       </Row>
 
-      <Row className="h-100">
+      <Row>
         <Col
           xs={12}
           sm={12}

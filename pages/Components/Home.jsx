@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <Container
       id="home"
-      className="h-100 home-col-up"
+      className="transition-wrapper py-5 h-100 grey"
       fluid
       ref={ref}
       data-func="show"

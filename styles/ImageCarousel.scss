@@ -1,0 +1,28 @@
+.carousel-images {
+  width: 60rem;
+  height: 45rem;
+  max-width: 60rem;
+  max-height: 45rem;
+
+  .carousel-inner {
+    height: 100%;
+    width: 100%;
+
+    .carousel-item {
+      height: 100%;
+
+      span {
+        height: 100% !important;
+        width: 100% !important;
+
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+.project-image {
+  object-fit: fill;
+}
