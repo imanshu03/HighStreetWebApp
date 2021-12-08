@@ -4,8 +4,10 @@ import { ObserverStore } from '../utils/ObserverContext';
 import Home from './Components/Home.jsx';
 import Header from './Components/Header.jsx';
 import { SSRProvider } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
 import MasterPlan from './Components/MasterPlan';
+import ImageCrousel from './Components/ImageCrousel';
+import 'bootstrap/dist/css/bootstrap.css';
+import ContactForm from './Components/ContactForm';
 
 export default function LandingPage() {
   useEffect(() => {
@@ -28,6 +30,8 @@ export default function LandingPage() {
           <Header />
           <Home />
           <MasterPlan />
+          <ImageCrousel />
+          <ContactForm />
         </SSRProvider>
       </ObserverStore>
     </>

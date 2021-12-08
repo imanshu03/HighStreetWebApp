@@ -2,7 +2,7 @@ import react, { useContext, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { ObserverContext } from '../../utils/ObserverContext';
 import { Col, Container, Row } from 'react-bootstrap';
-import Logo from '../../assets/images.png';
+import MasterImg from '../../assets/masterPlan.jpeg';
 
 const MasterPlan = () => {
   const observer = useContext(ObserverContext);
@@ -36,7 +36,11 @@ const MasterPlan = () => {
           md={5}
           className="d-flex align-items-center justify-content-center"
         >
-          <Image src={Logo} alt="high street logo" />
+          <Image
+            src={MasterImg}
+            alt="high street master plan"
+            className="masterPlan__logo"
+          />
         </Col>
 
         <Col
