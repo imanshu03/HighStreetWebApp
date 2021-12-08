@@ -1,5 +1,6 @@
-import react from 'react';
+import React, { useRef, useEffect, useContext } from 'react';
 import GoogleMapReact from 'google-map-react';
+import { ObserverContext } from '../../utils/ObserverContext';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import * as yup from 'yup';
 
@@ -27,8 +28,24 @@ const ContactForm = () => {
     email: yup.string().email().required('Email is a required field'),
   });
 
+  const ref = useRef(null);
+  const observer = useContext(ObserverContext);
+
+  useEffect(() => {
+    if (ref.current && observer) {
+      observer.observe(ref.current);
+    }
+  }, [ref, observer]);
+
   return (
-    <Container className="grey py-5" id="contact-us" fluid>
+    <Container
+      className="grey py-5 transition-wrapper"
+      id="contact-us"
+      fluid
+      ref={ref}
+      data-func="show"
+      data-classname="transition-up"
+    >
       <Row className="row py-3">
         <Col>
           <h1 className="display-4 text-center">Contact Us</h1>

@@ -1,6 +1,6 @@
 const properties = {
   root: null,
-  threshold: 0.5,
+  threshold: 0.3,
   rootMargin: '10px',
 };
 

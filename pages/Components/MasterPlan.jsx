@@ -34,13 +34,9 @@ const MasterPlan = () => {
           xs={12}
           sm={12}
           md={5}
-          className="d-flex align-items-center justify-content-center"
+          className="d-flex align-items-center justify-content-center image-wrapper"
         >
-          <Image
-            src={MasterImg}
-            alt="high street master plan"
-            className="masterPlan__logo"
-          />
+          <Image src={MasterImg} alt="high street master plan" />
         </Col>
 
         <Col

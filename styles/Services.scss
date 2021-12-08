@@ -3,9 +3,11 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) !important;
   transition: 0.4s all ease-in-out;
   cursor: pointer;
+  box-sizing: border-box;
+  border: 2px solid transparent;
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 5px rgba(49, 135, 23, 0.6) !important;
+    border: 2px solid rgba(49, 135, 23, 0.6);
   }
 }

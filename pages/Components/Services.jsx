@@ -52,10 +52,9 @@ const Services = () => {
 
   return (
     <Container
-      className="py-5"
       fluid
       id="services"
-      className="transition-wrapper"
+      className="transition-wrapper py-5"
       ref={ref}
       data-func="show"
       data-classname="transition-up"
