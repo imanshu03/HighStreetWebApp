@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { ObserverContext } from '../../utils/ObserverContext';
 import { Col, Container, Row } from 'react-bootstrap';
-import MasterImg from '../../assets/masterPlan.jpeg';
+import MasterImg from '../../assets/masterPlan.png';
 
 const MasterPlan = () => {
   const observer = useContext(ObserverContext);
