@@ -29,7 +29,7 @@ const Home = () => {
           xs={{ order: 'last', span: 12 }}
           sm={{ order: 'last', span: 12 }}
           md={{ order: 'first', span: 8 }}
-          className="d-flex align-items-center justify-content-center"
+          className="d-flex align-items-center justify-content-center pt-2"
         >
           <p className="lh-lg description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -45,7 +45,7 @@ const Home = () => {
           xs={{ order: 'first', span: 12 }}
           sm={{ order: 'first', span: 12 }}
           md={{ order: 'first', span: 4 }}
-          className="d-flex align-items-center justify-content-center"
+          className="d-flex align-items-center justify-content-center pt-2"
         >
           <Image src={Logo} alt="high street logo" />
         </Col>
