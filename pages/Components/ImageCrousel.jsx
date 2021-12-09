@@ -64,6 +64,7 @@ const ImageCrousel = () => {
                     src={data.image}
                     alt="first slide"
                     className="project-image"
+                    fill="responsive"
                   />
                   <Carousel.Caption>
                     <h3>{data.heading}</h3>

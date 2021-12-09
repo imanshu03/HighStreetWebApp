@@ -70,17 +70,12 @@ const ContactForm = () => {
           </Row>
           <Row>
             <Container style={{ height: '400px' }} className="w-100">
-              <GoogleMapReact
-                bootstrapURLKeys={{ key: '' }}
-                defaultCenter={constraint.center}
-                defaultZoom={constraint.zoom}
-              >
-                <AnyReactComponent
-                  lat={59.955413}
-                  lng={30.337844}
-                  text="My Marker"
-                />
-              </GoogleMapReact>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3432.1020759918065!2d76.85372301564612!3d30.659253996220155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f95f194d5ca13%3A0x28f78ba6fdceed9b!2sHigh%20Street%2C%20Commercial%20Showrooms%20at%20Peer%20muchulla%2C%20Sector%2020%20Panchkula!5e0!3m2!1sen!2sin!4v1639038140568!5m2!1sen!2sin&z=20"
+                allowFullScreen
+                loading="lazy"
+                className="w-100 h-100 map-location"
+              ></iframe>
             </Container>
           </Row>
         </Col>

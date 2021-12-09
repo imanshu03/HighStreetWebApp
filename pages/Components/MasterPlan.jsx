@@ -34,16 +34,20 @@ const MasterPlan = () => {
           xs={12}
           sm={12}
           md={5}
-          className="d-flex align-items-center justify-content-center image-wrapper"
+          className="d-flex align-items-center justify-content-center image-wrapper pt-2"
         >
-          <Image src={MasterImg} alt="high street master plan" />
+          <Image
+            src={MasterImg}
+            alt="high street master plan"
+            fill="responsive"
+          />
         </Col>
 
         <Col
           xs={12}
           sm={12}
           md={7}
-          className="d-flex align-items-center justify-content-center"
+          className="d-flex align-items-center justify-content-center pt-2"
         >
           <p className="lh-lg description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
