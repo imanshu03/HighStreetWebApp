@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <Container
       id="home"
-      className="transition-wrapper py-5 h-100 overflow-hidden"
+      className="transition-wrapper h-100 overflow-hidden"
       ref={ref}
       data-func="show"
       data-classname="transition-up"

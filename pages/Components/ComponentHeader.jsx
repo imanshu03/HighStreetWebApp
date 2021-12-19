@@ -19,9 +19,7 @@ const ComponentHeader = ({ heading }) => {
       data-func="show"
       data-classname="transition-left"
     >
-      <Col className="d-flex flex-row justify-content-center">
-        <h3 className="display-4 component-heading">{heading}</h3>
-      </Col>
+      <h3 className="display-4 component-heading text-center">{heading}</h3>
     </Row>
   );
 };

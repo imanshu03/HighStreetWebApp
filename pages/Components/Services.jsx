@@ -1,47 +1,25 @@
 import { useRef, useEffect, useContext } from 'react';
 import { ObserverContext } from '../../utils/ObserverContext';
 import ComponentHeader from './ComponentHeader';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
+import MallIcon from '../../assets/mall.svg';
+import CityIcon from '../../assets/cityscape.svg';
+import HospitalIcon from '../../assets/hospital-building.svg';
+import ParkingIcon from '../../assets/parking-area.svg';
+import SocietyIcon from '../../assets/social-housing.svg';
 
 const services = [
+  { SvgIcon: CityIcon, text: 'Adjacent to panchkula' },
+  { SvgIcon: HospitalIcon, text: '2 km to alchemist hospital' },
+  { SvgIcon: MallIcon, text: 'walking distance to d-mart' },
+  { SvgIcon: ParkingIcon, text: 'parking facilities' },
   {
-    heading: 'Service 1',
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat.`,
-  },
-  {
-    heading: 'Service 2',
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat.`,
-  },
-  {
-    heading: 'Service 3',
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat.`,
-  },
-  {
-    heading: 'Service 4',
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat.`,
-  },
-  {
-    heading: 'Service 5',
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat.`,
+    SvgIcon: SocietyIcon,
+    text: 'surrounded by a number of housing co-operative society',
   },
 ];
 
-const ServiceBox = ({ heading, description }) => {
+const ServiceBox = ({ SvgIcon, text }) => {
   const ref = useRef(null);
   const observer = useContext(ObserverContext);
 
@@ -52,37 +30,24 @@ const ServiceBox = ({ heading, description }) => {
   }, [ref, observer]);
 
   return (
-    <Col
-      lg={3}
-      md={5}
-      sm={10}
-      xs={10}
+    <div
       className="m-3 service-box transition-wrapper"
       ref={ref}
       data-func="show"
       data-classname="transition-up"
     >
       <div className="content-wrapper">
-        <h2>{heading}</h2>
-        <p>{description}</p>
+        <SvgIcon />
+        <h6>{text}</h6>
       </div>
-    </Col>
+    </div>
   );
 };
 
 const Services = () => {
-  const ref = useRef(null);
-  const observer = useContext(ObserverContext);
-
-  useEffect(() => {
-    if (ref.current && observer) {
-      observer.observe(ref.current);
-    }
-  }, [ref, observer]);
-
   return (
     <Container id="services" className="py-5 beige overflow-hidden" fluid>
-      <ComponentHeader heading="services" />
+      <ComponentHeader heading="amenities & specifications" />
       <Row className="justify-content-evenly">
         {services.map((ele, idx) => (
           <ServiceBox {...ele} key={idx} />
