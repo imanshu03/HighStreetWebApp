@@ -1,7 +1,7 @@
 const properties = {
   root: null,
-  threshold: 0.3,
-  rootMargin: '10px',
+  threshold: 0.4,
+  rootMargin: '0px',
 };
 
 export const callbacks = {

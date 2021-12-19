@@ -1,10 +1,6 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
-const Header = () => {
-  const toggleMenu = (menu, button) => {
-    menu.classList.toggle('show', false);
-    button.classList.toggle('collapsed', true);
-  };
+const NavBar = () => {
   return (
     <Navbar bg="white" expand="md" fixed="top" className="h-10">
       <Container>
@@ -72,4 +68,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default NavBar;

@@ -20,8 +20,8 @@ a {
   box-sizing: border-box;
 }
 
-.grey {
-  background-color: #f7f7f7;
+.beige {
+  background-color: #fffaf2;
 }
 
 #call-cta {
@@ -62,9 +62,42 @@ a {
   transition: 0.6s all ease-in-out;
 }
 
+.left-wrapper {
+  opacity: 0;
+  position: relative;
+  left: 2rem;
+  transition: 0.6s all ease-in-out;
+}
+
+.transition-left {
+  opacity: 1;
+  left: 0;
+}
+
 .transition-up {
   opacity: 1;
   top: 0;
+}
+
+.component-heading {
+  background-color: #f9ea8f;
+  background-image: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-transform: capitalize;
+  font-weight: 500 !important;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.5rem;
+  position: relative;
+  letter-spacing: 4px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 @import './Home.scss';

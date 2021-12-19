@@ -1,10 +1,8 @@
 import React, { useRef, useEffect, useContext } from 'react';
-import GoogleMapReact from 'google-map-react';
 import { ObserverContext } from '../../utils/ObserverContext';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import ComponentHeader from './ComponentHeader';
 import * as yup from 'yup';
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const ContactForm = () => {
   const constraint = {
@@ -29,6 +27,7 @@ const ContactForm = () => {
   });
 
   const ref = useRef(null);
+  const refHeader = useRef(null);
   const observer = useContext(ObserverContext);
 
   useEffect(() => {
@@ -38,20 +37,14 @@ const ContactForm = () => {
   }, [ref, observer]);
 
   return (
-    <Container
-      className="grey py-5 transition-wrapper"
-      id="contact-us"
-      fluid
-      ref={ref}
-      data-func="show"
-      data-classname="transition-up"
-    >
-      <Row className="row py-3">
-        <Col>
-          <h1 className="display-4 text-center">Contact Us</h1>
-        </Col>
-      </Row>
-      <Row>
+    <Container className="py-5 overflow-hidden" id="contact-us" fluid>
+      <ComponentHeader heading="contact us" />
+      <Row
+        className="transition-wrapper"
+        ref={ref}
+        data-func="show"
+        data-classname="transition-up"
+      >
         <Col md={6} sm={12} className="mt-3">
           <Row>
             <h5>

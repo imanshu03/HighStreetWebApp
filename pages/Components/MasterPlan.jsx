@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { ObserverContext } from '../../utils/ObserverContext';
 import { Col, Container, Row } from 'react-bootstrap';
+import ComponentHeader from './ComponentHeader';
 import MasterImg from '../../assets/masterPlan.png';
 
 const MasterPlan = () => {
@@ -15,21 +16,15 @@ const MasterPlan = () => {
   }, [ref, observer]);
 
   return (
-    <Container
-      className="transition-wrapper py-5"
-      fluid
-      ref={ref}
-      data-func="show"
-      data-classname="transition-up"
-      id="masterplan"
-    >
-      <Row className="py-3">
-        <Col className="d-flex align-items-center justify-content-center">
-          <h1 className="display-4 text-center">Master Plan</h1>
-        </Col>
-      </Row>
+    <Container className="py-5 beige overflow-hidden" id="masterplan" fluid>
+      <ComponentHeader heading="masterplan" />
 
-      <Row>
+      <Row
+        className="transition-wrapper"
+        ref={ref}
+        data-func="show"
+        data-classname="transition-up"
+      >
         <Col
           xs={12}
           sm={12}
