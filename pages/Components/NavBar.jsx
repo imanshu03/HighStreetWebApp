@@ -52,7 +52,7 @@ const NavBar = () => {
                 document.getElementById('services').scrollIntoView();
               }}
             >
-              Services
+              Amenities
             </Nav.Link>
             <Nav.Link
               onClick={() => {
