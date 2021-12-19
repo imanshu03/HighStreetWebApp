@@ -1,10 +1,19 @@
-import React, { useRef, useEffect, useContext } from 'react';
+import React, { useRef, useEffect, useContext, useState } from 'react';
 import { ObserverContext } from '../../utils/ObserverContext';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import ComponentHeader from './ComponentHeader';
+import { re } from 'prettier/doc';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import axios from 'axios';
+import Toast from 'react-bootstrap/Toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactForm = () => {
+  const notify = (message) => toast(message);
+
   const constraint = {
     center: {
       lat: 59.95,
@@ -13,18 +22,44 @@ const ContactForm = () => {
     zoom: 11,
   };
 
+  const sendQuery = async (data) => {
+    try {
+      const res = await axios.post('/api/contact', {
+        data,
+      });
+      reset();
+      notify('we haved recieved your query');
+    } catch (err) {
+      notify('Something went wrong, Please try after some time');
+    }
+  };
+
   const validationSchema = yup.object().shape({
     name: yup
       .string()
       .required('Name is a required field')
       .min(3, 'Name must be at least 3 characters'),
-    age: yup
-      .number()
-      .required('Please supply your age')
-      .min(18, 'You must be at least 18 years')
-      .max(60, 'You must be at most 60 years'),
+    mobile: yup.number().required('Please input your Mobile number'),
     email: yup.string().email().required('Email is a required field'),
+    message: yup
+      .string()
+      .required('Message is a required field')
+      .min(1, 'Message must be at least 1 characters'),
   });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+  });
+
+  const onSubmitHandler = (data) => {
+    console.log({ data });
+    sendQuery(data);
+  };
 
   const ref = useRef(null);
   const refHeader = useRef(null);
@@ -66,21 +101,45 @@ const ContactForm = () => {
           </Row>
         </Col>
         <Col md={6} sm={12} className="mt-3">
-          <Form className="w-100 h-100 d-flex flex-column justify-content-between">
+          <Form
+            className="w-100 h-100 d-flex flex-column justify-content-between"
+            onSubmit={handleSubmit(onSubmitHandler)}
+          >
             <Form.Group>
               {/* <label>FirstName</label> */}
-              <Form.Control type="name" placeholder="Full Name" />
+              <Form.Control
+                {...register('name')}
+                type="name"
+                placeholder="Full Name"
+              />
+              <p>{errors.name?.message}</p>
             </Form.Group>
             <Form.Group className="mt-3">
               {/* <label>Mobile</label> */}
-              <Form.Control type="mobile" placeholder="Mobile Number" />
+              <Form.Control
+                {...register('mobile')}
+                type="mobile"
+                placeholder="Mobile Number"
+              />
+              <p>{errors.mobile?.message}</p>
             </Form.Group>
             <Form.Group className="mt-3">
               {/* <label>Email Address</label> */}
-              <Form.Control type="email" placeholder="Email Address" />
+              <Form.Control
+                {...register('email')}
+                type="email"
+                placeholder="Email Address"
+              />
+              <p>{errors.email?.message}</p>
             </Form.Group>
             <Form.Group className="mt-3">
-              <Form.Control rows="10" placeholder="Message" as="textarea" />
+              <Form.Control
+                {...register('message')}
+                rows="10"
+                placeholder="Message"
+                as="textarea"
+              />
+              <p>{errors.message?.message}</p>
             </Form.Group>
             <Button type="submit" className="mt-3 w-100 custom-btn">
               Submit
@@ -88,6 +147,7 @@ const ContactForm = () => {
           </Form>
         </Col>
       </Row>
+      <ToastContainer />
     </Container>
   );
 };
