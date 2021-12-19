@@ -39,11 +39,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 10rem !important;
-  height: 10rem !important;
+  width: 12rem !important;
+  height: 12rem !important;
   margin: 1rem !important;
 
-  .content-wrapper {
+  .masterPlan__desc {
     height: 100%;
     width: 100%;
     margin: 0;
@@ -51,24 +51,52 @@
     background-color: white;
     transition: 0.4s all ease-out;
     padding: 1rem 0;
+    overflow: hidden;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    div {
+      width: 4rem;
+      height: 4rem;
+      height: fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 4rem;
+        height: 4rem;
+        fill: #aff1da;
+      }
+    }
+
+    .fix {
+      svg {
+        image {
+          transform: scale(0.8);
+        }
+      }
+    }
 
     h5 {
-      margin-top: 1.5rem;
       text-align: center;
-      color: #aff1da;
-      font-weight: 500;
+      color: black;
+      font-weight: 600;
       line-height: 1.2;
       text-transform: uppercase;
+      font-size: 1rem;
     }
     p {
-      margin: 0;
-      width: 99%;
+      margin: 1.2rem 0 0.2rem 0;
       text-align: center;
       letter-spacing: 1px;
-      font-size: 1.4rem;
+      font-size: 0.8rem;
       font-weight: 300;
       line-height: 1.2;
-      color: gray;
+      color: black;
       text-transform: capitalize;
     }
 
@@ -81,21 +109,21 @@
 @media screen and (max-width: 768px) {
   .masterPlan__desc__parent {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: scale(1.04);
+    transform: scale(1.08);
 
-    .content-wrapper {
-      transform: scale(0.97);
+    .masterPlan__desc {
+      transform: scale(0.95);
     }
   }
 }
 
 @media (hover: hover) {
   .masterPlan__desc__parent:hover {
-    transform: scale(1.04);
+    transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-    .content-wrapper {
-      transform: scale(0.97);
+    .masterPlan__desc {
+      transform: scale(0.95);
 
       .masterPlan__askPrice {
         text-decoration: underline;

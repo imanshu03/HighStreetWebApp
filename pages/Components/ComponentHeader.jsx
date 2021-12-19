@@ -24,7 +24,7 @@ const ComponentHeader = ({ heading, subheading }) => {
       </Col>
       {subheading && (
         <Col className="d-flex flex-row justify-content-center" xs={12}>
-          <h6 className="component-heading">{subheading}</h6>
+          <h5 className="component-heading">{subheading}</h5>
         </Col>
       )}
     </Row>
