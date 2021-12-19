@@ -1,13 +1,76 @@
 .service-box {
-  background-color: white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) !important;
-  transition: 0.4s all ease-in-out;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: 0.4s all ease-out;
   cursor: pointer;
-  box-sizing: border-box;
-  border: 2px solid transparent;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  background-color: #f9ea8f;
+  background-image: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &:hover {
-    transform: scale(1.05);
-    border: 2px solid rgba(49, 135, 23, 0.6);
+  .content-wrapper {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box !important;
+    background-color: white;
+    transition: 0.4s all ease-out;
+
+    h2 {
+      margin: 0;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin: 0;
+      width: 99%;
+      text-align: justify;
+      text-justify: distribute-all-lines;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .service-box {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .content-wrapper {
+      transform: scale(0.98);
+      border-radius: 2rem;
+    }
+
+    &:nth-child(even) {
+      border-radius: 0px 2rem 0px 2rem;
+    }
+
+    &:nth-child(odd) {
+      border-radius: 2rem 0px 2rem 0px;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .service-box:nth-child(even):hover {
+    transform: scale(1.08);
+    border-radius: 0px 2rem 0px 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .content-wrapper {
+      transform: scale(0.98);
+      border-radius: 2rem;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+  .service-box:nth-child(odd):hover {
+    transform: scale(1.1);
+    border-radius: 2rem 0px 2rem 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .content-wrapper {
+      transform: scale(0.98);
+      border-radius: 2rem;
+    }
   }
 }

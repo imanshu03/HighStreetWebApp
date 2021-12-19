@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import { ObserverStore } from '../utils/ObserverContext';
 import Home from './Components/Home.jsx';
-import Header from './Components/Header.jsx';
+import NavBar from './Components/NavBar.jsx';
 import { SSRProvider } from 'react-bootstrap';
 import MasterPlan from './Components/MasterPlan';
 import ImageCrousel from './Components/ImageCrousel';
@@ -45,7 +45,7 @@ export default function LandingPage() {
       </div>
       <ObserverStore>
         <SSRProvider>
-          <Header />
+          <NavBar />
           <Home />
           <MasterPlan />
           <ImageCrousel />

@@ -18,11 +18,11 @@ const Home = () => {
   return (
     <Container
       id="home"
-      className="transition-wrapper py-5 h-100 grey"
-      fluid
+      className="transition-wrapper py-5 h-100 overflow-hidden"
       ref={ref}
       data-func="show"
       data-classname="transition-up"
+      fluid
     >
       <Row className="h-100">
         <Col

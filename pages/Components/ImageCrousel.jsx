@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useContext } from 'react';
 import Image from 'next/image';
 import { ObserverContext } from '../../utils/ObserverContext';
 import { Carousel, Container, Col, Row } from 'react-bootstrap';
+import ComponentHeader from './ComponentHeader';
 import Image1 from '../../assets/masterCrouseone.jpeg';
 import Image2 from '../../assets/masterCrousesecond.jpeg';
 import Image3 from '../../assets/masterCrousethird.jpeg';
@@ -41,21 +42,15 @@ const ImageCrousel = () => {
   }, [ref, observer]);
 
   return (
-    <Container
-      className="transition-wrapper grey py-5"
-      id="image-gallery"
-      fluid
-      ref={ref}
-      data-func="show"
-      data-classname="transition-up"
-    >
-      <Row className="py-3">
-        <Col>
-          <h3 className="display-4 text-center">Image Gallery</h3>
-        </Col>
-      </Row>
+    <Container className="py-5 overflow-hidden" id="image-gallery" fluid>
+      <ComponentHeader heading="image gallery" />
       <Row>
-        <Col className="d-flex flex-row justify-content-center h-100">
+        <Col
+          className="d-flex flex-row justify-content-center h-100 transition-wrapper"
+          ref={ref}
+          data-func="show"
+          data-classname="transition-up"
+        >
           <Carousel className="carousel-images">
             {imageData.map((data, i) => {
               return (
