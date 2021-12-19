@@ -1,4 +1,6 @@
 .service-box {
+  width: 12rem !important;
+  height: 12rem;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: 0.4s all ease-out;
   cursor: pointer;
@@ -14,62 +16,47 @@
     height: 100%;
     width: 100%;
     margin: 0;
-    padding: 1rem;
+    padding: 1rem 0;
     box-sizing: border-box !important;
     background-color: white;
     transition: 0.4s all ease-out;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 
-    h2 {
-      margin: 0;
-      margin-bottom: 0.5rem;
+    svg {
+      width: 4rem;
+      height: 4rem;
+      margin-bottom: 1rem;
+      fill: #aff1da;
     }
-    p {
-      margin: 0;
-      width: 99%;
-      text-align: justify;
-      text-justify: distribute-all-lines;
+
+    h6 {
+      font-weight: 300;
+      line-height: 1.2;
+      text-align: center;
+      text-transform: uppercase;
     }
   }
 }
 
 @media screen and (max-width: 768px) {
   .service-box {
+    transform: scale(1.08);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
     .content-wrapper {
-      transform: scale(0.98);
-      border-radius: 2rem;
-    }
-
-    &:nth-child(even) {
-      border-radius: 0px 2rem 0px 2rem;
-    }
-
-    &:nth-child(odd) {
-      border-radius: 2rem 0px 2rem 0px;
+      transform: scale(0.95);
     }
   }
 }
 
 @media (hover: hover) {
-  .service-box:nth-child(even):hover {
-    transform: scale(1.02, 1.05);
-    border-radius: 0px 2rem 0px 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  .service-box:hover {
+    transform: scale(1.08);
 
     .content-wrapper {
-      transform: scale(0.98, 0.96);
-      border-radius: 2rem 0px 2rem 0px;
-    }
-  }
-  .service-box:nth-child(odd):hover {
-    transform: scale(1.02, 1.05);
-    border-radius: 2rem 0px 2rem 0px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-    .content-wrapper {
-      transform: scale(0.98, 0.96);
-      border-radius: 0px 2rem 0px 2rem;
+      transform: scale(0.95);
     }
   }
 }

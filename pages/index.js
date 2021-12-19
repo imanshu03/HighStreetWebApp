@@ -3,16 +3,17 @@ import { useEffect } from 'react';
 import { ObserverStore } from '../utils/ObserverContext';
 import Home from './Components/Home.jsx';
 import NavBar from './Components/NavBar.jsx';
-import { SSRProvider } from 'react-bootstrap';
+import { Row, SSRProvider } from 'react-bootstrap';
 import MasterPlan from './Components/MasterPlan';
 import ImageCrousel from './Components/ImageCrousel';
 import ContactForm from './Components/ContactForm';
 import Services from './Components/Services';
+import Footer from './Components/Footer';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function LandingPage() {
   useEffect(() => {
-    window.scrollTo({
+    document.getElementById('main-content').scrollTo({
       top: 0,
       behavior: 'smooth',
     });
@@ -46,11 +47,17 @@ export default function LandingPage() {
       <ObserverStore>
         <SSRProvider>
           <NavBar />
-          <Home />
-          <MasterPlan />
-          <ImageCrousel />
-          <Services />
-          <ContactForm />
+          <div className="content-wrapper" id="main-content">
+            <p className="rera-number">
+              RERA NUMBER: <b>PBRERA-SAS79-PC0160</b>
+            </p>
+            <Home />
+            <MasterPlan />
+            <ImageCrousel />
+            <Services />
+            <ContactForm />
+            <Footer />
+          </div>
         </SSRProvider>
       </ObserverStore>
     </>

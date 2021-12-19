@@ -100,6 +100,42 @@ a {
   overflow: hidden;
 }
 
+.content-wrapper {
+  height: 93%;
+  width: 100%;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
+.footer-text {
+  font-weight: 400;
+  line-height: 1.2;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.rera-number {
+  text-align: center;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.hs-nav {
+  height: 7%;
+}
+
+@media screen and (max-width: 768px) {
+  .rera-number {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .rera-number {
+    font-size: 0.6rem;
+  }
+}
+
 @import './Home.scss';
 @import './MasterPlan.scss';
 @import './ContactForm.scss';
