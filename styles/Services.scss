@@ -53,23 +53,23 @@
 
 @media (hover: hover) {
   .service-box:nth-child(even):hover {
-    transform: scale(1.08);
+    transform: scale(1.02, 1.05);
     border-radius: 0px 2rem 0px 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
     .content-wrapper {
-      transform: scale(0.98);
-      border-radius: 2rem;
+      transform: scale(0.98, 0.96);
+      border-radius: 2rem 0px 2rem 0px;
     }
   }
   .service-box:nth-child(odd):hover {
-    transform: scale(1.1);
+    transform: scale(1.02, 1.05);
     border-radius: 2rem 0px 2rem 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
     .content-wrapper {
-      transform: scale(0.98);
-      border-radius: 2rem;
+      transform: scale(0.98, 0.96);
+      border-radius: 0px 2rem 0px 2rem;
     }
   }
 }
