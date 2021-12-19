@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { ObserverContext } from '../../utils/ObserverContext';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Nav } from 'react-bootstrap';
 import ComponentHeader from './ComponentHeader';
 import MasterImg from '../../assets/masterPlan.png';
 
@@ -37,22 +37,70 @@ const MasterPlan = () => {
             fill="responsive"
           />
         </Col>
-
         <Col
           xs={12}
           sm={12}
           md={7}
-          className="d-flex align-items-center justify-content-center pt-2"
+          className="d-flex align-items-center justify-content-center flex-column pt-2"
         >
-          <p className="lh-lg description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          <Row className="w-100 d-flex flex-row flex-wrap">
+            <div className="masterPlan__desc__parent">
+              <div className="masterPlan__desc content-wrapper d-flex flex-column border border-light">
+                <p>Type</p>
+                <h5>SCO Sites</h5>
+              </div>
+            </div>
+            <div className="masterPlan__desc__parent">
+              <div className="masterPlan__desc content-wrapper d-flex flex-column border border-light">
+                <p>Floors</p>
+                <h5>4 Floor Passed from state Government</h5>
+              </div>
+            </div>
+            <div className="masterPlan__desc__parent">
+              <div className="masterPlan__desc content-wrapper d-flex flex-column border border-light">
+                <p>Size</p>
+                <h5>
+                  15 * 50 feet <br></br>15 * 60 feet
+                </h5>
+              </div>
+            </div>
+            <div
+              className="masterPlan__desc__parent"
+              onClick={() =>
+                document.getElementById('contact-us').scrollIntoView()
+              }
+            >
+              <div className="masterPlan__desc content-wrapper d-flex flex-column border border-light">
+                <p>Price</p>
+                <h5 className="masterPlan__askPrice">Ask</h5>
+              </div>
+            </div>
+            <div className="masterPlan__desc__parent">
+              <div className="masterPlan__desc content-wrapper d-flex flex-column border border-light">
+                <p>Possession</p>
+                <h5>Ready on spot</h5>
+              </div>
+            </div>
+
+            <div className="masterPlan__desc__parent">
+              <div className="masterPlan__desc content-wrapper d-flex flex-column border border-light">
+                <p>Project Area</p>
+                <h5>4 Acres</h5>
+              </div>
+            </div>
+            <div className="masterPlan__desc__parent">
+              <div className="masterPlan__desc content-wrapper d-flex flex-column border border-light">
+                <p>Total Sco</p>
+                <h5>74 units</h5>
+              </div>
+            </div>
+            <div className="masterPlan__desc__parent">
+              <div className="masterPlan__desc content-wrapper d-flex flex-column border border-light">
+                <p>Sco Left</p>
+                <h5>11 units</h5>
+              </div>
+            </div>
+          </Row>
         </Col>
       </Row>
     </Container>

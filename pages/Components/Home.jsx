@@ -29,16 +29,25 @@ const Home = () => {
           xs={{ order: 'last', span: 12 }}
           sm={{ order: 'last', span: 12 }}
           md={{ order: 'first', span: 8 }}
-          className="d-flex align-items-center justify-content-center pt-2"
+          className="d-flex flex-column justify-content-center pt-2"
         >
+          <Row>
+            <h1>The HighStreet</h1>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Park
+              view Complex
+            </p>
+          </Row>
+
           <p className="lh-lg description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Nearest and Proximity disance to panchkula cojioing wall to
+            panchkula. Zirakpur is an emerging city with superior connectivity,
+            large number of people already living and working here. Zirakpur
+            today, a busy commercial destination and there are plans to develop
+            it furthure through state goverment.
+            <br></br>
+            It is a key destination where a potential untapped market is poised
+            to draw in crowds and investors from every imaginable industry.
           </p>
         </Col>
         <Col

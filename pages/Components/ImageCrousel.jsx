@@ -11,23 +11,23 @@ import Image4 from '../../assets/masterCrousefour.jpeg';
 const imageData = [
   {
     image: Image1,
-    heading: 'First slide',
-    description: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+    heading: '',
+    description: '',
   },
   {
     image: Image2,
-    heading: 'Second slide',
-    description: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+    heading: '',
+    description: '',
   },
   {
     image: Image3,
-    heading: 'Third slide',
-    description: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+    heading: '',
+    description: '',
   },
   {
     image: Image4,
-    heading: 'Four slide',
-    description: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+    heading: '',
+    description: '',
   },
 ];
 
@@ -43,7 +43,11 @@ const ImageCrousel = () => {
 
   return (
     <Container className="py-5 overflow-hidden" id="image-gallery" fluid>
-      <ComponentHeader heading="image gallery" />
+      <ComponentHeader
+        heading="image gallery"
+        subheading="potential growth to your investments and high visibilty"
+      />
+
       <Row>
         <Col
           className="d-flex flex-row justify-content-center h-100 transition-wrapper"
