@@ -46,7 +46,7 @@ const ServiceBox = ({ SvgIcon, text }) => {
 
 const Services = () => {
   return (
-    <Container id="services" className="py-5 beige overflow-hidden" fluid>
+    <Container id="services" className="pt-3 pb-5 beige overflow-hidden" fluid>
       <ComponentHeader heading="amenities & specifications" />
       <Row className="justify-content-evenly">
         {services.map((ele, idx) => (

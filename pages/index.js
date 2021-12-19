@@ -8,6 +8,7 @@ import MasterPlan from './Components/MasterPlan';
 import ImageCrousel from './Components/ImageCrousel';
 import ContactForm from './Components/ContactForm';
 import Services from './Components/Services';
+import Footer from './Components/Footer';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function LandingPage() {
@@ -55,6 +56,7 @@ export default function LandingPage() {
             <ImageCrousel />
             <Services />
             <ContactForm />
+            <Footer />
           </div>
         </SSRProvider>
       </ObserverStore>

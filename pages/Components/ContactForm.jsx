@@ -37,7 +37,7 @@ const ContactForm = () => {
   }, [ref, observer]);
 
   return (
-    <Container className="py-5 overflow-hidden" id="contact-us" fluid>
+    <Container className="pt-3 pb-5 overflow-hidden" id="contact-us" fluid>
       <ComponentHeader heading="contact us" />
       <Row
         className="transition-wrapper"

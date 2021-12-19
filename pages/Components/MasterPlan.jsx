@@ -16,7 +16,11 @@ const MasterPlan = () => {
   }, [ref, observer]);
 
   return (
-    <Container className="py-5 beige overflow-hidden" id="masterplan" fluid>
+    <Container
+      className="pt-3 pb-5 beige overflow-hidden"
+      id="masterplan"
+      fluid
+    >
       <ComponentHeader heading="masterplan" />
 
       <Row

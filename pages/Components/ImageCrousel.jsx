@@ -42,7 +42,7 @@ const ImageCrousel = () => {
   }, [ref, observer]);
 
   return (
-    <Container className="py-5 overflow-hidden" id="image-gallery" fluid>
+    <Container className="pt-3 pb-5 overflow-hidden" id="image-gallery" fluid>
       <ComponentHeader heading="image gallery" />
       <Row>
         <Col
