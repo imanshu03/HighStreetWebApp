@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <Container
       id="home"
-      className="transition-wrapper h-100 overflow-hidden bg-white"
+      className="transition-wrapper overflow-hidden bg-white"
       ref={ref}
       data-func="show"
       data-classname="transition-up"
@@ -58,7 +58,7 @@ const Home = () => {
           md={{ order: 'first', span: 4 }}
           className="d-flex align-items-center justify-content-center pt-2"
         >
-          <Image src={Logo} alt="high street logo" />
+          <Image src={Logo} alt="high street logo" id="hs-logo" />
         </Col>
       </Row>
     </Container>

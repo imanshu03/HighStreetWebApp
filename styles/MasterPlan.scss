@@ -100,7 +100,7 @@
       text-transform: capitalize;
     }
 
-    .masterPlan__askPrice {
+    .masterPlan__Cta {
       transition: 0.4s all ease-out;
     }
   }
@@ -114,6 +114,10 @@
     .masterPlan__desc {
       transform: scale(0.95);
     }
+
+    .masterPlan__Cta {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -125,7 +129,7 @@
     .masterPlan__desc {
       transform: scale(0.95);
 
-      .masterPlan__askPrice {
+      .masterPlan__Cta {
         text-decoration: underline;
       }
     }

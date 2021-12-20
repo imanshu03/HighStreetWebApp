@@ -1,68 +1,31 @@
-import React, { useRef, useEffect, useContext, useState } from 'react';
+import React, { useRef, useEffect, useContext } from 'react';
 import { ObserverContext } from '../../utils/ObserverContext';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import ComponentHeader from './ComponentHeader';
-import { re } from 'prettier/doc';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
 import axios from 'axios';
-import Toast from 'react-bootstrap/Toast';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ContactForm = () => {
   const notify = (message) => toast(message);
 
-  const constraint = {
-    center: {
-      lat: 59.95,
-      lng: 30.33,
-    },
-    zoom: 11,
-  };
-
   const sendQuery = async (data) => {
     try {
-      const res = await axios.post('/api/contact', {
+      await axios.post('/api/contact', {
         data,
       });
-      reset();
       notify('we haved recieved your query');
     } catch (err) {
-      notify('Something went wrong, Please try after some time');
+      notify('Something went wrong, Please try again');
+    } finally {
+      reset();
     }
   };
 
-  const validationSchema = yup.object().shape({
-    name: yup
-      .string()
-      .required('Name is a required field')
-      .min(3, 'Name must be at least 3 characters'),
-    mobile: yup.number().required('Please input your Mobile number'),
-    email: yup.string().email().required('Email is a required field'),
-    message: yup
-      .string()
-      .required('Message is a required field')
-      .min(1, 'Message must be at least 1 characters'),
-  });
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm({
-    resolver: yupResolver(validationSchema),
-  });
-
-  const onSubmitHandler = (data) => {
-    console.log({ data });
-    sendQuery(data);
-  };
+  const { register, handleSubmit, reset } = useForm();
 
   const ref = useRef(null);
-  const refHeader = useRef(null);
   const observer = useContext(ObserverContext);
 
   useEffect(() => {
@@ -107,34 +70,37 @@ const ContactForm = () => {
         <Col md={6} sm={12} className="mt-3">
           <Form
             className="w-100 h-100 d-flex flex-column justify-content-between"
-            onSubmit={handleSubmit(onSubmitHandler)}
+            onSubmit={handleSubmit(sendQuery)}
           >
             <Form.Group>
-              {/* <label>FirstName</label> */}
               <Form.Control
                 {...register('name')}
                 type="name"
                 placeholder="Full Name"
+                pattern="[A-Za-z0-9]{3,}"
+                title="Enter valid name"
+                required
               />
-              <p>{errors.name?.message}</p>
             </Form.Group>
             <Form.Group className="mt-3">
-              {/* <label>Mobile</label> */}
               <Form.Control
                 {...register('mobile')}
                 type="mobile"
                 placeholder="Mobile Number"
+                pattern="^[6-9]{1}[0-9]{9}$"
+                title="Enter valid mobile number"
+                required
               />
-              <p>{errors.mobile?.message}</p>
             </Form.Group>
             <Form.Group className="mt-3">
-              {/* <label>Email Address</label> */}
               <Form.Control
                 {...register('email')}
                 type="email"
                 placeholder="Email Address"
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                title="Enter valid email"
+                required
               />
-              <p>{errors.email?.message}</p>
             </Form.Group>
             <Form.Group className="mt-3">
               <Form.Control
@@ -142,8 +108,8 @@ const ContactForm = () => {
                 rows="10"
                 placeholder="Message"
                 as="textarea"
+                required
               />
-              <p>{errors.message?.message}</p>
             </Form.Group>
             <Button type="submit" className="mt-3 w-100 custom-btn">
               Submit

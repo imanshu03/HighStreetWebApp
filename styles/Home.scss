@@ -38,3 +38,18 @@
     }
   }
 }
+
+@media screen and (min-width: 769px) {
+  #home {
+    height: 100%;
+  }
+}
+
+// @media screen and (max-width: 768px) {
+//   #hs-logo {
+//     min-width: 10rem !important;
+//     min-height: 10rem !important;
+//     max-width: 10rem !important;
+//     max-height: 10rem !important;
+//   }
+// }
