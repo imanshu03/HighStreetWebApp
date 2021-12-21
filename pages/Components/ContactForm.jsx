@@ -1,6 +1,6 @@
-import React, { useRef, useEffect, useContext } from 'react';
+import React, { useRef, useEffect, useContext, useState } from 'react';
 import { ObserverContext } from '../../utils/ObserverContext';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Spinner } from 'react-bootstrap';
 import ComponentHeader from './ComponentHeader';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -12,13 +12,15 @@ const ContactForm = () => {
 
   const sendQuery = async (data) => {
     try {
+      setSending(true);
       await axios.post('/api/contact', {
         data,
       });
-      notify('we haved recieved your query');
+      notify('We have recieved your query!');
     } catch (err) {
-      notify('Something went wrong, Please try again');
+      notify('Something went wrong, Please try again.');
     } finally {
+      setSending(false);
       reset();
     }
   };
@@ -27,6 +29,8 @@ const ContactForm = () => {
 
   const ref = useRef(null);
   const observer = useContext(ObserverContext);
+
+  const [sending, setSending] = useState(false);
 
   useEffect(() => {
     if (ref.current && observer) {
@@ -75,10 +79,9 @@ const ContactForm = () => {
             <Form.Group>
               <Form.Control
                 {...register('name')}
-                type="name"
+                type="text"
                 placeholder="Full Name"
-                pattern="[A-Za-z0-9]{3,}"
-                title="Enter valid name"
+                minLength="3"
                 required
               />
             </Form.Group>
@@ -112,7 +115,11 @@ const ContactForm = () => {
               />
             </Form.Group>
             <Button type="submit" className="mt-3 w-100 custom-btn">
-              Submit
+              {!sending ? (
+                `Submit your query`
+              ) : (
+                <Spinner animation="border" variant="light" size="sm" />
+              )}
             </Button>
           </Form>
         </Col>

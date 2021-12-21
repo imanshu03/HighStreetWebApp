@@ -117,14 +117,10 @@ a {
   padding-right: 2rem;
 }
 
-.rera-number {
+#rera-number {
   text-align: center;
   letter-spacing: 4px;
   margin: 0;
-}
-
-.hs-nav {
-  height: 7%;
 }
 
 #top-root {
@@ -135,7 +131,7 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .rera-number {
+  #rera-number {
     font-size: 0.8rem;
   }
   #top-root {
@@ -144,11 +140,12 @@ a {
 }
 
 @media screen and (max-width: 450px) {
-  .rera-number {
+  #rera-number {
     font-size: 0.6rem;
   }
 }
 
+@import './Navbar.scss';
 @import './Home.scss';
 @import './MasterPlan.scss';
 @import './ContactForm.scss';

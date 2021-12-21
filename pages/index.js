@@ -13,8 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 export default function LandingPage() {
   useEffect(() => {
-    document.getElementById('main-content').scrollTo({
-      top: 0,
+    document.getElementById('home').scrollIntoView({
       behavior: 'smooth',
     });
   }, []);
@@ -23,7 +22,10 @@ export default function LandingPage() {
     <>
       <Head>
         <title>High Street</title>
-        <meta name="description" content="High Street" />
+        <meta
+          name="description"
+          content="High Street, Commercial Showrooms at Peer muchulla, Sector 20 Panchkula"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -49,9 +51,6 @@ export default function LandingPage() {
           <SSRProvider>
             <NavBar />
             <div className="content-wrapper bg-white" id="main-content">
-              <p className="rera-number">
-                RERA NUMBER: <b>PBRERA-SAS79-PC0160</b>
-              </p>
               <Home />
               <MasterPlan />
               <ImageCrousel />

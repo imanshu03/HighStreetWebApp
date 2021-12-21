@@ -4,8 +4,8 @@ export default function (req, res) {
     port: 25,
     host: 'smtp.gmail.com',
     auth: {
-      user: '',
-      pass: '',
+      user: 'queries.highstreet@gmail.com',
+      pass: 'HighStreet31!',
     },
     secure: false,
     tls: {
@@ -14,7 +14,7 @@ export default function (req, res) {
   });
 
   let htmlContent = `
-                <h1><strong>Contact Form</strong></h1>
+                <h1><strong>High Street - Lead Details</strong></h1>
                 <p>Hi,</p>
                 <p>${req.body.data.name} contacted with the following Details</p>
                 <br/>
@@ -23,9 +23,9 @@ export default function (req, res) {
                 <p>Message: ${req.body.data.message}</p>`;
 
   const mailData = {
-    from: 'toshal.shinedezign@gmail.com',
-    to: `${req.body.data.email}`,
-    subject: 'Message From ',
+    from: 'queries.highstreet@gmail.com',
+    to: 'shubham0021@yahoo.com',
+    subject: `Message From ${req.body.data.name} | ${req.body.data.email}`,
     text: 'Sample email',
     html: htmlContent,
   };

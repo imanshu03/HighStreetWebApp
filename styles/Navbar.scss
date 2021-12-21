@@ -1,0 +1,15 @@
+.hs-nav {
+  height: 7%;
+  max-height: 7%;
+}
+
+.navbar-brand {
+  .navbar-heading {
+    font-weight: lighter;
+    letter-spacing: 2px;
+
+    &:last-of-type {
+      margin-left: 0.2rem;
+    }
+  }
+}

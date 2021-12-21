@@ -6,25 +6,38 @@ import Logo from '../../assets/hslogo.png';
 
 const Home = () => {
   const observer = useContext(ObserverContext);
-
+  const refHeader = useRef(null);
   const ref = useRef(null);
 
   useEffect(() => {
     if (ref.current && observer) {
       observer.observe(ref.current);
     }
-  }, [ref, observer]);
+    if (refHeader.current && observer) {
+      observer.observe(refHeader.current);
+    }
+  }, [ref, observer, refHeader]);
 
   return (
-    <Container
-      id="home"
-      className="transition-wrapper overflow-hidden bg-white"
-      ref={ref}
-      data-func="show"
-      data-classname="transition-up"
-      fluid
-    >
-      <Row className="h-100">
+    <Container id="home" className="overflow-hidden bg-white" fluid>
+      <Row
+        className="left-wrapper"
+        ref={refHeader}
+        data-func="show"
+        data-classname="transition-left"
+      >
+        <Col>
+          <p id="rera-number">
+            RERA NUMBER: <b>PBRERA-SAS79-PC0160</b>
+          </p>
+        </Col>
+      </Row>
+      <Row
+        className="h-100 transition-wrapper"
+        ref={ref}
+        data-func="show"
+        data-classname="transition-up"
+      >
         <Col
           xs={{ order: 'last', span: 12 }}
           sm={{ order: 'last', span: 12 }}
@@ -58,7 +71,12 @@ const Home = () => {
           md={{ order: 'first', span: 4 }}
           className="d-flex align-items-center justify-content-center pt-2"
         >
-          <Image src={Logo} alt="high street logo" id="hs-logo" />
+          <Image
+            src={Logo}
+            alt="high street logo"
+            id="hs-logo"
+            loading="eager"
+          />
         </Col>
       </Row>
     </Container>

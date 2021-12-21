@@ -120,6 +120,7 @@ const MasterPlan = () => {
             src={MasterImg}
             alt="high street master plan"
             fill="responsive"
+            loading="eager"
           />
         </Col>
         <Col
